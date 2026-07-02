@@ -12,23 +12,39 @@ Develop predictive models using Logistic Regression, Decision Tree, and Random F
 Compare model performance using accuracy, precision, recall, F1-score, and AUC.
 # Methods
 Data Cleaning and Pre-processing
+
 Exploratory Data Analysis (EDA)
+
 Descriptive Statistics
+
 Hypothesis Testing
+
 Logistic Regression
+
 Decision Tree Classification
+
 Random Forest Classification
+
 ROC Curve Analysis
+
 Model Evaluation and Comparison
 # Tools and Packages
 R
+
 dplyr
+
 ggplot2
+
 caret
+
 randomForest
+
 rpart
+
 pROC
+
 openxlsx
+
 # Key Results
 
 Three predictive models were developed and compared:
