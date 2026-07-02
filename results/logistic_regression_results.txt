@@ -1,0 +1,374 @@
+Heart Disease Prediction and Risk Factor Analysis
+Logistic Regression Results
+================================================
+
+Outcome distribution:
+
+No Heart Disease    Heart Disease 
+             411              509 
+
+Missing values:
+          age           sex            cp      trestbps          chol 
+            0             0             0             0             0 
+          fbs       restecg        thalch         exang       oldpeak 
+            0             0             0             0             0 
+        slope            ca          thal heart_disease 
+            0             0             0             0 
+
+=====================================================
+Variable: age 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.225949   0.420170  -7.678 1.62e-14 ***
+age          0.064568   0.007803   8.275  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1189.0  on 918  degrees of freedom
+AIC: 1193
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)         age 
+ 0.03971808  1.06669790 
+
+95% Confidence Intervals for Odds Ratios
+                 2.5 %     97.5 %
+(Intercept) 0.01720809 0.08947278
+age         1.05073971 1.08340474
+
+=====================================================
+Variable: sex 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -1.0578     0.1641  -6.444 1.16e-10 ***
+sexMale       1.5996     0.1813   8.823  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1176.5  on 918  degrees of freedom
+AIC: 1180.5
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)     sexMale 
+  0.3472222   4.9510112 
+
+95% Confidence Intervals for Odds Ratios
+                2.5 %    97.5 %
+(Intercept) 0.2494109 0.4753486
+sexMale     3.4928448 7.1178307
+
+=====================================================
+Variable: trestbps 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.474024   0.507107  -2.907 0.003652 ** 
+trestbps     0.012799   0.003821   3.350 0.000808 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1253.4  on 918  degrees of freedom
+AIC: 1257.4
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)    trestbps 
+  0.2290022   1.0128815 
+
+95% Confidence Intervals for Odds Ratios
+                 2.5 %    97.5 %
+(Intercept) 0.08392674 0.6139782
+trestbps    1.00539437 1.0205835
+
+=====================================================
+Variable: chol 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -0.666786   0.335327  -1.988  0.04676 * 
+chol         0.003601   0.001349   2.670  0.00758 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1257.5  on 918  degrees of freedom
+AIC: 1261.5
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)        chol 
+  0.5133557   1.0036080 
+
+95% Confidence Intervals for Odds Ratios
+                2.5 %    97.5 %
+(Intercept) 0.2631054 0.9816258
+chol        1.0010033 1.0063195
+
+=====================================================
+Variable: thalch 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  5.172463   0.467377   11.07   <2e-16 ***
+thalch      -0.035668   0.003293  -10.83   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1120.0  on 918  degrees of freedom
+AIC: 1124
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)      thalch 
+176.3486781   0.9649609 
+
+95% Confidence Intervals for Odds Ratios
+                 2.5 %      97.5 %
+(Intercept) 71.9825909 450.3506360
+thalch       0.9586146   0.9710782
+
+=====================================================
+Variable: exang 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -0.44998    0.08494  -5.298 1.17e-07 ***
+exangTRUE    2.08455    0.17012  12.253  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1079.3  on 918  degrees of freedom
+AIC: 1083.3
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)   exangTRUE 
+  0.6376404   8.0410092 
+
+95% Confidence Intervals for Odds Ratios
+                2.5 %     97.5 %
+(Intercept) 0.5392498  0.7524402
+exangTRUE   5.8006498 11.3110586
+
+=====================================================
+Variable: oldpeak 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -0.46217    0.09074  -5.094 3.51e-07 ***
+oldpeak      0.89682    0.08704  10.303  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance: 1123.9  on 918  degrees of freedom
+AIC: 1127.9
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+(Intercept)     oldpeak 
+  0.6299153   2.4518009 
+
+95% Confidence Intervals for Odds Ratios
+                2.5 %    97.5 %
+(Intercept) 0.5265785 0.7516572
+oldpeak     2.0764960 2.9216081
+
+=====================================================
+Variable: cp 
+=====================================================
+
+Regression Summary
+
+Call:
+glm(formula = formula, family = binomial, data = heart)
+
+Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         1.3269     0.1103   12.03  < 2e-16 ***
+cpatypical angina  -3.1595     0.2460  -12.85  < 2e-16 ***
+cpnon-anginal      -1.9116     0.1830  -10.44  < 2e-16 ***
+cptypical angina   -1.5892     0.3172   -5.01 5.45e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.9  on 919  degrees of freedom
+Residual deviance:  978.1  on 916  degrees of freedom
+AIC: 986.1
+
+Number of Fisher Scoring iterations: 4
+
+
+Odds Ratios
+      (Intercept) cpatypical angina     cpnon-anginal  cptypical angina 
+       3.76923077        0.04244898        0.14784234        0.20408163 
+
+95% Confidence Intervals for Odds Ratios
+                       2.5 %     97.5 %
+(Intercept)       3.04951866 4.70124249
+cpatypical angina 0.02567827 0.06756513
+cpnon-anginal     0.10282084 0.21083050
+cptypical angina  0.10844085 0.37865040
+
+=====================================================
+Multiple Logistic Regression Model
+=====================================================
+
+Call:
+glm(formula = heart_disease ~ age + sex + trestbps + chol + thalch + 
+    exang + oldpeak + cp, family = binomial, data = heart)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)       -1.868350   1.156493  -1.616  0.10620    
+age                0.033844   0.010622   3.186  0.00144 ** 
+sexMale            1.581497   0.237624   6.655 2.82e-11 ***
+trestbps           0.002549   0.005295   0.481  0.63021    
+chol               0.004338   0.001802   2.407  0.01608 *  
+thalch            -0.016380   0.004085  -4.010 6.08e-05 ***
+exangTRUE          0.902655   0.214844   4.201 2.65e-05 ***
+oldpeak            0.526242   0.102376   5.140 2.74e-07 ***
+cpatypical angina -2.255462   0.274827  -8.207 2.27e-16 ***
+cpnon-anginal     -1.402295   0.214550  -6.536 6.32e-11 ***
+cptypical angina  -1.170835   0.369135  -3.172  0.00151 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1264.93  on 919  degrees of freedom
+Residual deviance:  783.39  on 909  degrees of freedom
+AIC: 805.39
+
+Number of Fisher Scoring iterations: 5
+
+
+Odds Ratios
+      (Intercept)               age           sexMale          trestbps 
+        0.1543781         1.0344234         4.8622285         1.0025525 
+             chol            thalch         exangTRUE           oldpeak 
+        1.0043478         0.9837536         2.4661430         1.6925596 
+cpatypical angina     cpnon-anginal  cptypical angina 
+        0.1048251         0.2460317         0.3101078 
+
+95% Confidence Intervals for Odds Ratios
+                       2.5 %    97.5 %
+(Intercept)       0.01581777 1.4809801
+age               1.01326205 1.0563993
+sexMale           3.07677635 7.8215853
+trestbps          0.99222892 1.0130703
+chol              1.00085955 1.0079810
+thalch            0.97582425 0.9915955
+exangTRUE         1.62245350 3.7714065
+oldpeak           1.39034363 2.0779902
+cpatypical angina 0.06013168 0.1771437
+cpnon-anginal     0.16097143 0.3736139
+cptypical angina  0.14915098 0.6376959
+
+Pseudo R-squared
+fitting null model for pseudo-r2
+         llh      llhNull           G2     McFadden         r2ML         r2CU 
+-391.6971588 -632.4659249  481.5375320    0.3806826    0.4075035    0.5454167 
+
+Akaike Information Criterion (AIC)
+[1] 805.3943
+
+Variance Inflation Factors (VIF)
+             GVIF Df GVIF^(1/(2*Df))
+age      1.179522  1        1.086058
+sex      1.069675  1        1.034251
+trestbps 1.094586  1        1.046225
+chol     1.053708  1        1.026503
+thalch   1.160493  1        1.077262
+exang    1.161323  1        1.077647
+oldpeak  1.112047  1        1.054537
+cp       1.121968  3        1.019366
+
+Hosmer-Lemeshow Goodness-of-Fit Test
+
+	Hosmer and Lemeshow goodness of fit (GOF) test
+
+data:  as.numeric(heart$heart_disease) - 1, fitted(model_final)
+X-squared = 12.087, df = 8, p-value = 0.1474
+

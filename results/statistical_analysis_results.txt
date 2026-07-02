@@ -1,0 +1,541 @@
+Heart Disease Prediction and Risk Factor Analysis
+Statistical Analysis Results
+================================================
+
+Dataset Summary
+      age            sex               dataset                  cp     
+ Min.   :28.00   Female:194   Cleveland    :304   asymptomatic   :496  
+ 1st Qu.:47.00   Male  :726   Hungary      :293   atypical angina:174  
+ Median :54.00                Switzerland  :123   non-anginal    :204  
+ Mean   :53.51                VA Long Beach:200   typical angina : 46  
+ 3rd Qu.:60.00                                                         
+ Max.   :77.00                                                         
+    trestbps          chol          fbs                  restecg   
+ Min.   : 80.0   Min.   : 85.0   FALSE:782                   :  2  
+ 1st Qu.:120.0   1st Qu.:217.8   TRUE :138   lv hypertrophy  :188  
+ Median :130.0   Median :239.5               normal          :551  
+ Mean   :132.1   Mean   :245.2               st-t abnormality:179  
+ 3rd Qu.:140.0   3rd Qu.:267.0                                     
+ Max.   :200.0   Max.   :603.0                                     
+     thalch        exang        oldpeak                slope    
+ Min.   : 60.0   FALSE:583   Min.   :-2.6000              :309  
+ 1st Qu.:120.0   TRUE :337   1st Qu.: 0.0000   downsloping: 63  
+ Median :140.0               Median : 0.5000   flat       :345  
+ Mean   :137.7               Mean   : 0.8533   upsloping  :203  
+ 3rd Qu.:156.0               3rd Qu.: 1.5000                    
+ Max.   :202.0               Max.   : 6.2000                    
+       ca                        thal              heart_disease
+ Min.   :0.0000                    :486   No Heart Disease:411  
+ 1st Qu.:0.0000   fixed defect     : 46   Heart Disease   :509  
+ Median :0.0000   normal           :196                         
+ Mean   :0.2272   reversable defect:192                         
+ 3rd Qu.:0.0000                                                 
+ Max.   :3.0000                                                 
+
+Outcome distribution:
+
+No Heart Disease    Heart Disease 
+             411              509 
+
+Missing values:
+          age           sex       dataset            cp      trestbps 
+            0             0             0             0             0 
+         chol           fbs       restecg        thalch         exang 
+            0             0             0             0             0 
+      oldpeak         slope            ca          thal heart_disease 
+            0             0             0             0             0 
+
+=====================================================
+Variable: age 
+=====================================================
+
+Group Summary
+# A tibble: 2 × 6
+  heart_disease        n  mean median    sd   IQR
+  <fct>            <int> <dbl>  <int> <dbl> <dbl>
+1 No Heart Disease   411  50.5     51  9.43    14
+2 Heart Disease      509  55.9     57  8.72    11
+
+Shapiro-Wilk Normality Test
+
+	Shapiro-Wilk normality test
+
+data:  no_hd
+W = 0.99301, p-value = 0.05276
+
+
+	Shapiro-Wilk normality test
+
+data:  hd
+W = 0.98502, p-value = 4.26e-05
+
+
+Variance Test
+
+	F test to compare two variances
+
+data:  age by heart_disease
+F = 1.1707, num df = 410, denom df = 508, p-value = 0.09206
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.9745727 1.4088119
+sample estimates:
+ratio of variances 
+          1.170671 
+
+
+Welch Two Sample t-test
+
+	Welch Two Sample t-test
+
+data:  age by heart_disease
+t = -8.8551, df = 845.86, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group No Heart Disease and group Heart Disease is not equal to 0
+95 percent confidence interval:
+ -6.543537 -4.169039
+sample estimates:
+mean in group No Heart Disease    mean in group Heart Disease 
+                      50.54745                       55.90373 
+
+
+Wilcoxon Rank Sum Test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  age by heart_disease
+W = 69330, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+=====================================================
+Variable: trestbps 
+=====================================================
+
+Group Summary
+# A tibble: 2 × 6
+  heart_disease        n  mean median    sd   IQR
+  <fct>            <int> <dbl>  <int> <dbl> <dbl>
+1 No Heart Disease   411  130.    130  16.5    20
+2 Heart Disease      509  134.    130  18.9    25
+
+Shapiro-Wilk Normality Test
+
+	Shapiro-Wilk normality test
+
+data:  no_hd
+W = 0.96156, p-value = 6.797e-09
+
+
+	Shapiro-Wilk normality test
+
+data:  hd
+W = 0.96644, p-value = 2.182e-09
+
+
+Variance Test
+
+	F test to compare two variances
+
+data:  trestbps by heart_disease
+F = 0.76069, num df = 410, denom df = 508, p-value = 0.003853
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.6332632 0.9154255
+sample estimates:
+ratio of variances 
+          0.760685 
+
+
+Welch Two Sample t-test
+
+	Welch Two Sample t-test
+
+data:  trestbps by heart_disease
+t = -3.443, df = 912.54, p-value = 0.0006014
+alternative hypothesis: true difference in means between group No Heart Disease and group Heart Disease is not equal to 0
+95 percent confidence interval:
+ -6.298899 -1.725097
+sample estimates:
+mean in group No Heart Disease    mean in group Heart Disease 
+                      129.9173                       133.9293 
+
+
+Wilcoxon Rank Sum Test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  trestbps by heart_disease
+W = 91893, p-value = 0.001423
+alternative hypothesis: true location shift is not equal to 0
+
+
+=====================================================
+Variable: chol 
+=====================================================
+
+Group Summary
+# A tibble: 2 × 6
+  heart_disease        n  mean median    sd   IQR
+  <fct>            <int> <dbl>  <dbl> <dbl> <dbl>
+1 No Heart Disease   411  240.   240.  53.0  57.5
+2 Heart Disease      509  249.   240.  50.4  38  
+
+Shapiro-Wilk Normality Test
+
+	Shapiro-Wilk normality test
+
+data:  no_hd
+W = 0.9342, p-value = 1.713e-12
+
+
+	Shapiro-Wilk normality test
+
+data:  hd
+W = 0.84323, p-value < 2.2e-16
+
+
+Variance Test
+
+	F test to compare two variances
+
+data:  chol by heart_disease
+F = 1.1073, num df = 410, denom df = 508, p-value = 0.2759
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.9217812 1.3324982
+sample estimates:
+ratio of variances 
+          1.107257 
+
+
+Welch Two Sample t-test
+
+	Welch Two Sample t-test
+
+data:  chol by heart_disease
+t = -2.6929, df = 857.83, p-value = 0.007221
+alternative hypothesis: true difference in means between group No Heart Disease and group Heart Disease is not equal to 0
+95 percent confidence interval:
+ -16.020175  -2.512562
+sample estimates:
+mean in group No Heart Disease    mean in group Heart Disease 
+                      240.0961                       249.3625 
+
+
+Wilcoxon Rank Sum Test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  chol by heart_disease
+W = 91547, p-value = 0.001058
+alternative hypothesis: true location shift is not equal to 0
+
+
+=====================================================
+Variable: thalch 
+=====================================================
+
+Group Summary
+# A tibble: 2 × 6
+  heart_disease        n  mean median    sd   IQR
+  <fct>            <int> <dbl>  <int> <dbl> <dbl>
+1 No Heart Disease   411  148.    150  23.1  29.5
+2 Heart Disease      509  129.    130  23.4  31  
+
+Shapiro-Wilk Normality Test
+
+	Shapiro-Wilk normality test
+
+data:  no_hd
+W = 0.98067, p-value = 2.659e-05
+
+
+	Shapiro-Wilk normality test
+
+data:  hd
+W = 0.99465, p-value = 0.0733
+
+
+Variance Test
+
+	F test to compare two variances
+
+data:  thalch by heart_disease
+F = 0.97719, num df = 410, denom df = 508, p-value = 0.8086
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.8134985 1.1759681
+sample estimates:
+ratio of variances 
+         0.9771863 
+
+
+Welch Two Sample t-test
+
+	Welch Two Sample t-test
+
+data:  thalch by heart_disease
+t = 12.534, df = 881.66, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group No Heart Disease and group Heart Disease is not equal to 0
+95 percent confidence interval:
+ 16.28083 22.32617
+sample estimates:
+mean in group No Heart Disease    mean in group Heart Disease 
+                      148.3723                       129.0688 
+
+
+Wilcoxon Rank Sum Test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  thalch by heart_disease
+W = 151378, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+=====================================================
+Variable: oldpeak 
+=====================================================
+
+Group Summary
+# A tibble: 2 × 6
+  heart_disease        n  mean median    sd   IQR
+  <fct>            <int> <dbl>  <dbl> <dbl> <dbl>
+1 No Heart Disease   411 0.422      0 0.697   0.6
+2 Heart Disease      509 1.20       1 1.17    2  
+
+Shapiro-Wilk Normality Test
+
+	Shapiro-Wilk normality test
+
+data:  no_hd
+W = 0.70049, p-value < 2.2e-16
+
+
+	Shapiro-Wilk normality test
+
+data:  hd
+W = 0.93651, p-value = 6.613e-14
+
+
+Variance Test
+
+	F test to compare two variances
+
+data:  oldpeak by heart_disease
+F = 0.35719, num df = 410, denom df = 508, p-value < 2.2e-16
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.2973583 0.4298518
+sample estimates:
+ratio of variances 
+         0.3571911 
+
+
+Welch Two Sample t-test
+
+	Welch Two Sample t-test
+
+data:  oldpeak by heart_disease
+t = -12.539, df = 850.61, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group No Heart Disease and group Heart Disease is not equal to 0
+95 percent confidence interval:
+ -0.9006975 -0.6568912
+sample estimates:
+mean in group No Heart Disease    mean in group Heart Disease 
+                     0.4223844                      1.2011788 
+
+
+Wilcoxon Rank Sum Test
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  oldpeak by heart_disease
+W = 58982, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+=====================================================
+Variable: sex 
+=====================================================
+
+Contingency Table
+        
+         No Heart Disease Heart Disease
+  Female              144            50
+  Male                267           459
+
+Expected Counts
+        
+         No Heart Disease Heart Disease
+  Female         86.66739      107.3326
+  Male          324.33261      401.6674
+
+Chi-square Test
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tbl
+X-squared = 85.361, df = 1, p-value < 2.2e-16
+
+
+=====================================================
+Variable: cp 
+=====================================================
+
+Contingency Table
+                 
+                  No Heart Disease Heart Disease
+  asymptomatic                 104           392
+  atypical angina              150            24
+  non-anginal                  131            73
+  typical angina                26            20
+
+Expected Counts
+                 
+                  No Heart Disease Heart Disease
+  asymptomatic           221.58261     274.41739
+  atypical angina         77.73261      96.26739
+  non-anginal             91.13478     112.86522
+  typical angina          20.55000      25.45000
+
+Chi-square Test
+
+	Pearson's Chi-squared test
+
+data:  tbl
+X-squared = 268.35, df = 3, p-value < 2.2e-16
+
+
+=====================================================
+Variable: fbs 
+=====================================================
+
+Contingency Table
+       
+        No Heart Disease Heart Disease
+  FALSE              367           415
+  TRUE                44            94
+
+Expected Counts
+       
+        No Heart Disease Heart Disease
+  FALSE           349.35        432.65
+  TRUE             61.65         76.35
+
+Chi-square Test
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tbl
+X-squared = 10.145, df = 1, p-value = 0.001447
+
+
+=====================================================
+Variable: restecg 
+=====================================================
+
+Contingency Table
+                  
+                   No Heart Disease Heart Disease
+                                  0             2
+  lv hypertrophy                 82           106
+  normal                        268           283
+  st-t abnormality               61           118
+
+Expected Counts
+                  
+                   No Heart Disease Heart Disease
+                          0.8934783      1.106522
+  lv hypertrophy         83.9869565    104.013043
+  normal                246.1532609    304.846739
+  st-t abnormality       79.9663043     99.033696
+
+Fisher's Exact Test used because at least one expected count is < 5
+
+	Fisher's Exact Test for Count Data
+
+data:  tbl
+p-value = 0.002478
+alternative hypothesis: two.sided
+
+
+=====================================================
+Variable: exang 
+=====================================================
+
+Contingency Table
+       
+        No Heart Disease Heart Disease
+  FALSE              356           227
+  TRUE                55           282
+
+Expected Counts
+       
+        No Heart Disease Heart Disease
+  FALSE         260.4489      322.5511
+  TRUE          150.5511      186.4489
+
+Chi-square Test
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tbl
+X-squared = 171.17, df = 1, p-value < 2.2e-16
+
+
+=====================================================
+Variable: slope 
+=====================================================
+
+Contingency Table
+             
+              No Heart Disease Heart Disease
+                           193           116
+  downsloping               14            49
+  flat                      79           266
+  upsloping                125            78
+
+Expected Counts
+             
+              No Heart Disease Heart Disease
+                     138.04239     170.95761
+  downsloping         28.14457      34.85543
+  flat               154.12500     190.87500
+  upsloping           90.68804     112.31196
+
+Chi-square Test
+
+	Pearson's Chi-squared test
+
+data:  tbl
+X-squared = 142.05, df = 3, p-value < 2.2e-16
+
+
+=====================================================
+Variable: thal 
+=====================================================
+
+Contingency Table
+                   
+                    No Heart Disease Heart Disease
+                                 224           262
+  fixed defect                    11            35
+  normal                         138            58
+  reversable defect               38           154
+
+Expected Counts
+                   
+                    No Heart Disease Heart Disease
+                           217.11522      268.8848
+  fixed defect              20.55000       25.4500
+  normal                    87.56087      108.4391
+  reversable defect         85.77391      106.2261
+
+Chi-square Test
+
+	Pearson's Chi-squared test
+
+data:  tbl
+X-squared = 109.03, df = 3, p-value < 2.2e-16
+

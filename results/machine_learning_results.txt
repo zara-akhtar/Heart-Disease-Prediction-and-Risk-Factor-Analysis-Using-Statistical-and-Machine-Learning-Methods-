@@ -1,0 +1,97 @@
+Heart Disease Prediction and Risk Factor Analysis
+Machine Learning Results
+===============================================
+
+Outcome distribution in full dataset:
+
+No Heart Disease    Heart Disease 
+             411              509 
+
+Outcome distribution in training set:
+
+No Heart Disease    Heart Disease 
+             329              408 
+
+Outcome distribution in test set:
+
+No Heart Disease    Heart Disease 
+              82              101 
+
+
+Decision Tree Complexity Parameter Table
+
+
+Classification tree:
+rpart(formula = model_formula, data = train_data, method = "class", 
+    control = rpart.control(cp = 0.001, minsplit = 25, minbucket = 10, 
+        maxdepth = 4))
+
+Variables actually used in tree construction:
+[1] age    cp     exang  sex    thal   thalch
+
+Root node error: 329/737 = 0.4464
+
+n= 737 
+
+        CP nsplit rel error  xerror     xstd
+1 0.483283      0   1.00000 1.00000 0.041020
+2 0.021277      1   0.51672 0.51672 0.034761
+3 0.018237      3   0.47416 0.50152 0.034396
+4 0.010132      4   0.45593 0.49848 0.034322
+5 0.001000      7   0.42553 0.51064 0.034616
+
+
+Selected CP for moderate pruning:
+[1] 0.01013171
+
+
+Pruned Decision Tree
+
+n= 737 
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+ 1) root 737 329 Heart Disease (0.4464043 0.5535957)  
+   2) cp=atypical angina,non-anginal,typical angina 331  86 No Heart Disease (0.7401813 0.2598187)  
+     4) age< 56.5 226  34 No Heart Disease (0.8495575 0.1504425) *
+     5) age>=56.5 105  52 No Heart Disease (0.5047619 0.4952381)  
+      10) sex=Female 25   5 No Heart Disease (0.8000000 0.2000000) *
+      11) sex=Male 80  33 Heart Disease (0.4125000 0.5875000)  
+        22) thalch>=134.5 52  23 No Heart Disease (0.5576923 0.4423077) *
+        23) thalch< 134.5 28   4 Heart Disease (0.1428571 0.8571429) *
+   3) cp=asymptomatic 406  84 Heart Disease (0.2068966 0.7931034) *
+
+
+Random Forest
+
+
+Call:
+ randomForest(formula = model_formula, data = train_data, ntree = 500,      importance = TRUE) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 3
+
+        OOB estimate of  error rate: 18.32%
+Confusion matrix:
+                 No Heart Disease Heart Disease class.error
+No Heart Disease              255            74   0.2249240
+Heart Disease                  61           347   0.1495098
+
+
+Random Forest Variable Importance
+
+         No Heart Disease Heart Disease MeanDecreaseAccuracy MeanDecreaseGini
+age             13.013453      8.955901            16.046698        40.269787
+sex             12.971786     17.437607            19.628305        14.706304
+cp              39.340711     27.645563            44.746023        65.820796
+trestbps         1.084526      5.188315             4.676986        27.570914
+chol             1.736676     10.343947             8.976875        36.366490
+fbs              6.306058      6.267990             9.323369         5.677811
+restecg          1.058101      5.341896             4.525562        10.831712
+thalch          13.101743     19.641920            24.675797        46.870329
+exang           17.409058     14.275467            22.545014        23.412974
+oldpeak         13.941751      9.973642            17.593913        27.046823
+slope           18.279950     10.959929            20.915656        26.663373
+ca               6.903567     12.507829            13.722304         7.146228
+thal            19.709188     11.365772            21.446316        21.494594

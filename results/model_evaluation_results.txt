@@ -1,0 +1,96 @@
+MODEL COMPARISON
+
+                Model Accuracy Precision Recall Specificity    F1   AUC
+1 Logistic Regression    0.809     0.837  0.812       0.805 0.824 0.880
+2       Decision Tree    0.743     0.807  0.703       0.793 0.751 0.806
+3       Random Forest    0.798     0.808  0.832       0.756 0.820 0.892
+
+
+LOGISTIC REGRESSION
+Confusion Matrix and Statistics
+
+                  Reference
+Prediction         No Heart Disease Heart Disease
+  No Heart Disease               66            19
+  Heart Disease                  16            82
+                                         
+               Accuracy : 0.8087         
+                 95% CI : (0.7442, 0.863)
+    No Information Rate : 0.5519         
+    P-Value [Acc > NIR] : 2.522e-13      
+                                         
+                  Kappa : 0.6146         
+                                         
+ Mcnemar's Test P-Value : 0.7353         
+                                         
+            Sensitivity : 0.8119         
+            Specificity : 0.8049         
+         Pos Pred Value : 0.8367         
+         Neg Pred Value : 0.7765         
+             Prevalence : 0.5519         
+         Detection Rate : 0.4481         
+   Detection Prevalence : 0.5355         
+      Balanced Accuracy : 0.8084         
+                                         
+       'Positive' Class : Heart Disease  
+                                         
+
+
+DECISION TREE
+Confusion Matrix and Statistics
+
+                  Reference
+Prediction         No Heart Disease Heart Disease
+  No Heart Disease               65            30
+  Heart Disease                  17            71
+                                          
+               Accuracy : 0.7432          
+                 95% CI : (0.6735, 0.8048)
+    No Information Rate : 0.5519          
+    P-Value [Acc > NIR] : 7.046e-08       
+                                          
+                  Kappa : 0.4884          
+                                          
+ Mcnemar's Test P-Value : 0.08005         
+                                          
+            Sensitivity : 0.7030          
+            Specificity : 0.7927          
+         Pos Pred Value : 0.8068          
+         Neg Pred Value : 0.6842          
+             Prevalence : 0.5519          
+         Detection Rate : 0.3880          
+   Detection Prevalence : 0.4809          
+      Balanced Accuracy : 0.7478          
+                                          
+       'Positive' Class : Heart Disease   
+                                          
+
+
+RANDOM FOREST
+Confusion Matrix and Statistics
+
+                  Reference
+Prediction         No Heart Disease Heart Disease
+  No Heart Disease               62            17
+  Heart Disease                  20            84
+                                          
+               Accuracy : 0.7978          
+                 95% CI : (0.7323, 0.8535)
+    No Information Rate : 0.5519          
+    P-Value [Acc > NIR] : 2.794e-12       
+                                          
+                  Kappa : 0.5898          
+                                          
+ Mcnemar's Test P-Value : 0.7423          
+                                          
+            Sensitivity : 0.8317          
+            Specificity : 0.7561          
+         Pos Pred Value : 0.8077          
+         Neg Pred Value : 0.7848          
+             Prevalence : 0.5519          
+         Detection Rate : 0.4590          
+   Detection Prevalence : 0.5683          
+      Balanced Accuracy : 0.7939          
+                                          
+       'Positive' Class : Heart Disease   
+                                          
