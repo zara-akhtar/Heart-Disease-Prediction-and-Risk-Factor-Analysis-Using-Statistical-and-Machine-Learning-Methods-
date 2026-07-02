@@ -7,9 +7,13 @@ Using the UCI Heart Disease dataset, the project follows a complete data analysi
 
 # Research Objectives
 Explore the demographic and clinical characteristics of patients with and without heart disease.
+
 Identify significant risk factors associated with heart disease.
+
 Develop predictive models using Logistic Regression, Decision Tree, and Random Forest algorithms.
+
 Compare model performance using accuracy, precision, recall, F1-score, and AUC.
+
 # Methods
 Data Cleaning and Pre-processing
 
