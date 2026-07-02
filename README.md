@@ -50,17 +50,24 @@ openxlsx
 Three predictive models were developed and compared:
 
 Model	Accuracy	AUC
+
 Logistic Regression	80.9%	0.880
+
 Decision Tree	74.3%	0.806
+
 Random Forest	79.8%	0.892
 
 Logistic Regression achieved the highest overall accuracy, while Random Forest demonstrated the best discriminative ability based on the Area Under the ROC Curve (AUC). Decision Tree models provided an interpretable approach but showed lower predictive performance.
 
 # Repository Structure
 data/ – Raw and processed datasets
+
 scripts/ – R scripts for data cleaning, statistical analysis, machine learning, and model evaluation
+
 figures/ – Visualisations generated during the analysis
+
 results/ – Statistical outputs and model performance summaries
+
 Author
 
 Zara Samee Akhtar
